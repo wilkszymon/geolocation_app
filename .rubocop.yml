@@ -1,0 +1,45 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-gitlab-security
+  - rubocop-performance
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2.2
+  Exclude:
+    - vendor/**/*
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'config.ru'
+    - 'Rakefile'
+    - 'bin/**/*'
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 180
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'lib/tasks/*'

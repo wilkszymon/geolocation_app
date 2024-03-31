@@ -1,0 +1,24 @@
+GitlabSecurity/PublicSend:
+  Exclude:
+    - 'lib/ipstack/client.rb'
+    - 'app/services/concerns/performable.rb'
+    - 'spec/controllers/application_controller_spec.rb'
+
+GitlabSecurity/JsonSerialization:
+  Exclude:
+    - 'spec/controllers/api/geolocations_controller_spec.rb'
+
+Metrics/AbcSize:
+  Max: 32
+
+Metrics/MethodLength:
+  Max: 25
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 13
+
+RSpec/PredicateMatcher:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 4

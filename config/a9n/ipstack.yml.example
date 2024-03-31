@@ -1,0 +1,9 @@
+development: &development
+  host_api: 'http://api.ipstack.com'
+  access_key: ''
+
+test:
+  <<: *development
+
+production:
+  <<: *development
