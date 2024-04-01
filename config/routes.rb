@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     delete "geolocations", to: "geolocations#destroy"
     post "geolocations", to: "geolocations#create"
   end
+
+  match '*unmatched', to: 'application#handle_invalid_request', via: :all
 end

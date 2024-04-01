@@ -2,6 +2,11 @@ class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token::ControllerMethods
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  rescue_from ActionController::ParameterMissing, with: :handle_invalid_request
+
+  def handle_invalid_request
+    render json: { error: "Invalid input for #{request.method}" }, status: :bad_request
+  end
 
   private
 
