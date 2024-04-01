@@ -40,7 +40,7 @@ RSpec.describe Api::GeolocationsController do
     end
 
     context 'when token is valid' do
-      before { request.headers['Authorization'] = ActionController::HttpAuthentication::Token.encode_credentials(Rails.application.credentials.dig(:api, :token)) }
+      before { request.headers['Authorization'] = ActionController::HttpAuthentication::Token.encode_credentials(A9n.api.access_key) }
 
       context 'when geolocation exists' do
         let(:geolocation) { create(:geolocation) }
@@ -71,7 +71,7 @@ RSpec.describe Api::GeolocationsController do
     end
 
     context 'when token is valid' do
-      before { request.headers['Authorization'] = ActionController::HttpAuthentication::Token.encode_credentials(Rails.application.credentials.dig(:api, :token)) }
+      before { request.headers['Authorization'] = ActionController::HttpAuthentication::Token.encode_credentials(A9n.api.access_key) }
 
       context 'when geolocation does not exist' do
         let(:geolocation) { build(:geolocation) }

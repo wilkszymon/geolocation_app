@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
 
   def authenticate_token
     authenticate_with_http_token do |token, _options|
-      ActiveSupport::SecurityUtils.secure_compare(token, Rails.application.credentials.dig(:api, :token))
+      ActiveSupport::SecurityUtils.secure_compare(token, A9n.api.access_key)
     end
   end
 

@@ -1,0 +1,8 @@
+development: &development
+  access_key: 'd03ef611597c5739c1d244577932596d716f07d0ba83c5240c6562f0cc48d8c3'
+
+test:
+  <<: *development
+
+production:
+  <<: *development
